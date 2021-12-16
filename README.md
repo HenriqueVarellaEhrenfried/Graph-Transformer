@@ -1,8 +1,11 @@
+The original readme is below. This repository contains some minor changes compared to the original. It is adapted to run with custom node features in the V1 of Pytorch.
+
+----------------
 <p align="center">
 	<img src="https://github.com/daiquocnguyen/U2GNN/blob/master/logo.png">
 </p>
 
-# Universal Graph Transformer Self-Attention Networks<a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fdaiquocnguyen%2FU2GNN%2Fblob%2Fmaster%2FREADME.md"><img alt="Twitter" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fdaiquocng"></a>
+# Universal Graph Transformer Self-Attention Networks
 
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/daiquocnguyen/U2GNN"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/daiquocnguyen/U2GNN">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/daiquocnguyen/U2GNN">
@@ -10,7 +13,7 @@
 <a href="https://github.com/daiquocnguyen/U2GNN/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/daiquocnguyen/U2GNN"></a>
 <img alt="GitHub" src="https://img.shields.io/github/license/daiquocnguyen/U2GNN">
 
-This program provides the implementation of our graph transformer, named UGformer, as described in [our paper](https://arxiv.org/pdf/1909.11855.pdf), where we leverage the transformer self-attention network to learn graph representations.
+This program provides the implementation of our graph transformer, named UGformer, as described in [the paper](https://arxiv.org/pdf/1909.11855.pdf), where the transformer self-attention network to learn graph representations is presented.
 
 Variant 1            |  Variant 2
 :-------------------------:|:-------------------------:
@@ -51,7 +54,7 @@ Variant 1            |  Variant 2
 - Scikit-learn	0.21.2
 
 ## Cite  
-Please cite the paper whenever our graph transformer is used to produce published results or incorporated into other software:
+Please cite the paper whenever the graph transformer is used to produce published results or incorporated into other software:
 
 	@article{Nguyen2019UGT,
 		author={Dai Quoc Nguyen and Tu Dinh Nguyen and Dinh Phung},
