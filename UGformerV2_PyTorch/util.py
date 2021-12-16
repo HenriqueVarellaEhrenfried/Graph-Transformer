@@ -45,7 +45,7 @@ class S2VGraph(object):
         self.g = g
         self.node_tags = node_tags
         self.neighbors = []
-        self.node_features = 0
+        self.node_features = 0 if node_features == [] else node_features
         self.edge_mat = 0
         self.max_neighbor = 0
 
@@ -81,15 +81,18 @@ def load_data(dataset, degree_as_tag):
                 if tmp == len(row):
                     # no node attributes
                     row = [int(w) for w in row]
-                    attr = None
+                    attr = []
                 else:
                     row, attr = [int(w) for w in row[:tmp]], np.array([float(w) for w in row[tmp:]])
                 if not row[0] in feat_dict:
                     mapped = len(feat_dict)
                     feat_dict[row[0]] = mapped
                 node_tags.append(feat_dict[row[0]])
+                
+                # print("CONDICIONAL", tmp > len(row), tmp, "|", len(row))
 
-                if tmp > len(row):
+                # if tmp > len(row):
+                if len(attr) > 0 : 
                     node_features.append(attr)
 
                 n_edges += row[1]
@@ -105,7 +108,8 @@ def load_data(dataset, degree_as_tag):
 
             assert len(g) == n
 
-            g_list.append(S2VGraph(g, l, node_tags))
+            # g_list.append(S2VGraph(g, l, node_tags))
+            g_list.append(S2VGraph(g, l, node_tags, node_features))
 
     #add labels and edge_mat       
     for g in g_list:
@@ -141,8 +145,11 @@ def load_data(dataset, degree_as_tag):
     tag2index = {tagset[i]:i for i in range(len(tagset))}
 
     for g in g_list:
-        g.node_features = np.zeros((len(g.node_tags), len(tagset)), dtype=np.float32)
-        g.node_features[range(len(g.node_tags)), [tag2index[tag] for tag in g.node_tags]] = 1
+        # g.node_features = np.zeros((len(g.node_tags), len(tagset)), dtype=np.float32)
+        # g.node_features[range(len(g.node_tags)), [tag2index[tag] for tag in g.node_tags]] = 1
+        if not node_feature_flag:
+            g.node_features = np.zeros((len(g.node_tags), len(tagset)), dtype=np.float32)
+            g.node_features[range(len(g.node_tags)), [tag2index[tag] for tag in g.node_tags]] = 1
 
 
     print('# classes: %d' % len(label_dict))

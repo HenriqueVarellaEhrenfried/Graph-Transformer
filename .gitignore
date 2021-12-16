@@ -1,0 +1,7 @@
+ENV/
+env-desk-linux/
+dataset/
+env-linux-server/
+UGformerV1_PyTorch/__pycache__
+UGformerV2_PyTorch/__pycache__
+.vscode

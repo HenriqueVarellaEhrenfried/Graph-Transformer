@@ -4,6 +4,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn import TransformerEncoder, TransformerEncoderLayer
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+
 class UGformerV1(nn.Module):
 
     def __init__(self, feature_dim_size, ff_hidden_size, num_classes,
@@ -30,6 +33,7 @@ class UGformerV1(nn.Module):
     def forward(self, input_x, graph_pool, X_concat):
         prediction_scores = 0
         input_Tr = F.embedding(input_x, X_concat)
+        input_Tr = input_Tr.type(torch.FloatTensor).to(device)
         for layer_idx in range(self.num_GNN_layers):
             output_Tr = self.ugformer_layers[layer_idx](input_Tr)[0]
             #new input for next layer

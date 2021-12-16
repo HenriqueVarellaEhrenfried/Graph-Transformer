@@ -44,6 +44,7 @@ print(args)
 print("Loading data...")
 
 use_degree_as_tag = False
+#use_degree_as_tag = True
 if args.dataset == 'COLLAB' or args.dataset == 'IMDBBINARY' or args.dataset == 'IMDBMULTI':
     use_degree_as_tag = True
 graphs, num_classes = load_data(args.dataset, use_degree_as_tag)

@@ -4,6 +4,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn import TransformerEncoder, TransformerEncoderLayer
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# device = "cpu"
+
 class FullyConnectedGT_UGformerV2(nn.Module):
 
     def __init__(self, feature_dim_size, ff_hidden_size, num_classes,
@@ -38,7 +41,7 @@ class FullyConnectedGT_UGformerV2(nn.Module):
         input_Tr = node_features
         for layer_idx in range(self.num_GNN_layers):
             # self-attention over all nodes
-            input_Tr = torch.unsqueeze(input_Tr, 1)  #[seq_length, batch_size=1, dim] for pytorch transformer
+            input_Tr = torch.unsqueeze(input_Tr, 1).type(torch.FloatTensor).to(device)  #[seq_length, batch_size=1, dim] for pytorch transformer
             input_Tr = self.ugformer_layers[layer_idx](input_Tr)
             input_Tr = torch.squeeze(input_Tr, 1)
             # take a sum over neighbors followed by a linear transformation and an activation function --> similar to GCN

@@ -18,6 +18,8 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 if torch.cuda.is_available():
     torch.cuda.manual_seed_all(123)
 
+# device = "cpu"
+
 # Parameters
 # ==================================================
 
@@ -49,7 +51,7 @@ graphs, num_classes = load_data(args.dataset, use_degree_as_tag)
 # train_idx, test_idx = separate_data_idx(graphs, args.fold_idx)
 train_graphs, test_graphs = separate_data(graphs, args.fold_idx)
 feature_dim_size = graphs[0].node_features.shape[1]
-print(feature_dim_size)
+print("feature_dim_size:: " , feature_dim_size)
 if "REDDIT" in args.dataset:
     feature_dim_size = 4
 
@@ -87,6 +89,8 @@ model = FullyConnectedGT_UGformerV2(feature_dim_size=feature_dim_size, ff_hidden
 
 def cross_entropy(pred, soft_targets): # use nn.CrossEntropyLoss if not using soft labels in Line 159
     logsoftmax = nn.LogSoftmax(dim=1)
+    soft_targets=soft_targets.to(device)
+    # pred = pred.to('cpu')
     return torch.mean(torch.sum(- soft_targets * logsoftmax(pred), 1))
 # criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=args.learning_rate)
@@ -98,7 +102,10 @@ def train():
     np.random.shuffle(idxs)
     for idx in idxs:
         Adj_block, node_features, graph_label = get_data(train_graphs[idx]) # one graph per step. should modify to use "padding" (for node_features and Adj_block) within a batch size???
+        Adj_block = Adj_block.type(torch.FloatTensor).to(device)
+        node_features = node_features.type(torch.FloatTensor).to(device)
         graph_label = label_smoothing(graph_label, num_classes)
+        graph_label = graph_label.type(torch.FloatTensor)
         optimizer.zero_grad()
         prediction_score = model.forward(Adj_block, node_features)
         # loss = criterion(prediction_scores, graph_labels)
