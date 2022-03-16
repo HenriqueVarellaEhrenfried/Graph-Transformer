@@ -1,0 +1,3 @@
+Namespace(run_folder='../', dataset='MR-MR-Order_Circular-TAG-None', learning_rate=0.0001, batch_size=4, num_epochs=30, model_name='MR-MR-Order_Circular-TAG-None_idx8', sampled_num=512, dropout=0.5, num_hidden_layers=2, num_timesteps=1, ff_hidden_size=1024, num_neighbors=4, fold_idx=8)
+Loading data...
+loading data

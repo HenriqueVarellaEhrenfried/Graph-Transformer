@@ -1,0 +1,16 @@
+>>> [1/6] Working on B2W_COMPLETE-Rating-Only_Order-TAG-None
+      Started at Mon Mar 7 15:46:57 -03 2022
+>>> [2/6] Working on B2W_COMPLETE-Rating-Order_Circular-TAG-None
+      Started at Mon Mar 7 17:04:17 -03 2022
+>>> [3/6] Working on B2W_COMPLETE-Rating-Binary_Tree-TAG-None
+      Started at Mon Mar 7 18:44:23 -03 2022
+>>> [4/6] Working on MR-Only_Order-TAG-None
+      Started at Mon Mar 7 20:04:16 -03 2022
+>>> [5/6] Working on MR-Order_Circular-TAG-None
+      Started at Mon Mar 7 20:24:27 -03 2022
+>>> [6/6] Working on MR-Binary_Tree-TAG-None
+      Started at Mon Mar 7 20:44:35 -03 2022
+
+real    318m53.539s
+user    693m45.977s
+sys     49m2.192s

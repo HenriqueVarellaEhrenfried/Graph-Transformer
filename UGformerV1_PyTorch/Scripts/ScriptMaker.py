@@ -2,40 +2,12 @@ from numpy import percentile
 
 
 DATASETS = [
-    'B2W_COMPLETE-Rating-Default-TAG-Distance',
-    'B2W_COMPLETE-Rating-Order-TAG-Distance',
-    'B2W_COMPLETE-Rating-Order-Multigraph-TAG-Distance',
-    'B2W_COMPLETE-Rating-Default-Self-TAG-None',
-    'B2W_COMPLETE-Rating-Order-Self-TAG-None',
-    'B2W_COMPLETE-Rating-Order-Multigraph-Self-TAG-None',
-    'B2W_COMPLETE-Rating-Default-Self-TAG-DEP',
-    'B2W_COMPLETE-Rating-Order-Self-TAG-DEP',
-    'B2W_COMPLETE-Rating-Order-Multigraph-Self-TAG-DEP',
-    'B2W_COMPLETE-Rating-Default-Self-TAG-POS',
-    'B2W_COMPLETE-Rating-Order-Self-TAG-POS',
-    'B2W_COMPLETE-Rating-Order-Multigraph-Self-TAG-POS',
-    'B2W_COMPLETE-Rating-Default-Self-TAG-DEP-POS',
-    'B2W_COMPLETE-Rating-Order-Self-TAG-DEP-POS',
-    'B2W_COMPLETE-Rating-Order-Multigraph-Self-TAG-DEP-POS',
-    'B2W_COMPLETE-Rating-Default-Self-TAG-POS-DEP',
-    'B2W_COMPLETE-Rating-Order-Self-TAG-POS-DEP',
-    'B2W_COMPLETE-Rating-Order-Multigraph-Self-TAG-POS-DEP',
-    'B2W_COMPLETE-Rating-Default-Self-TAG-SQRT-PROD',
-    'B2W_COMPLETE-Rating-Order-Self-TAG-SQRT-PROD',
-    'B2W_COMPLETE-Rating-Order-Multigraph-Self-TAG-SQRT-PROD',
-    'B2W_COMPLETE-Rating-Default-Self-TAG-Distance',
-    'B2W_COMPLETE-Rating-Order-Self-TAG-Distance',
-    'B2W_COMPLETE-Rating-Order-Multigraph-Self-TAG-Distance',
-    'B2W_COMPLETE-Rating-Default-TAG-DEP',
-    'B2W_COMPLETE-Rating-Default-TAG-POS',
-    'B2W_COMPLETE-Rating-Default-TAG-DEP-POS',
-    'B2W_COMPLETE-Rating-Default-TAG-POS-DEP',
-    'B2W_COMPLETE-Rating-Default-TAG-SQRT-PROD',
-    'B2W_COMPLETE-Rating-Order-TAG-DEP',
-    'B2W_COMPLETE-Rating-Order-TAG-POS',
-    'B2W_COMPLETE-Rating-Order-TAG-DEP-POS',
-    'B2W_COMPLETE-Rating-Order-TAG-POS-DEP',
-    'B2W_COMPLETE-Rating-Order-TAG-SQRT-PROD'
+    'B2W_COMPLETE-Rating-Only_Order-TAG-None',
+    'B2W_COMPLETE-Rating-Order_Circular-TAG-None',
+    'B2W_COMPLETE-Rating-Binary_Tree-TAG-None',
+    'MR-Only_Order-TAG-None',
+    'MR-Order_Circular-TAG-None',
+    'MR-Binary_Tree-TAG-None'
 ]
 
 i = 1
