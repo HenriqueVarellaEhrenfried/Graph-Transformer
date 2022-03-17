@@ -24,7 +24,7 @@ FP = {
 }
 
 
-datasets=[ 'MR-Default-Self-TAG-None', 'MR-Order-Multigraph-Self-TAG-None', 'MR-Order-Self-TAG-None'] 
+datasets=[ 'MR-Default-TAG-None', 'MR-Order-Multigraph-TAG-None', 'MR-Order-TAG-None'] 
 fold_idx=list(range(0,10))
 
 
