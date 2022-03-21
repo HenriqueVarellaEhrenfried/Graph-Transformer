@@ -24,7 +24,7 @@ FP = {
 }
 
 
-datasets=[ 'MR-Default-TAG-None', 'MR-Order-Multigraph-TAG-None', 'MR-Order-TAG-None'] 
+datasets=['10kGNAD-DE-Binary-Tree-TAG-None', '10kGNAD-DE-Default-Self-TAG-None', '10kGNAD-DE-Only-Order-TAG-None', '10kGNAD-DE-Order-Circular-TAG-None', '10kGNAD-DE-Order-Multigraph-Self-TAG-None', '10kGNAD-DE-Order-Self-TAG-None', '10kGNAD-Tree', '10kGNAD-Tree-Order', '10kGNAD-Tree-Order-Multigraph'] 
 fold_idx=list(range(0,10))
 
 
