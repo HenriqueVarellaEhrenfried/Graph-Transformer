@@ -1,0 +1,14 @@
+Namespace(run_folder='../', dataset='B2W_COMPLETE-Rating-Order-Self-TAG-None-NEW', learning_rate=0.0001, batch_size=4, num_epochs=30, model_name='B2W_COMPLETE-Rating-Order-Self-TAG-None-NEW_idx3', sampled_num=512, dropout=0.5, num_hidden_layers=2, num_timesteps=1, ff_hidden_size=1024, num_neighbors=4, fold_idx=3)
+Loading data...
+loading data
+# classes: 5
+# maximum node tag: 1
+# data: 41945
+300
+Loading data... finished!
+Writing to /media/SSD/Doutorado/Doutorado/runs_UGformerV1_Sup/B2W_COMPLETE-Rating-Order-Self-TAG-None-NEW_idx3
+
+| epoch   1 | time: 96.20s | loss 40645.22 | test acc 45.24 | 
+| epoch   2 | time: 92.29s | loss 14573.32 | test acc 49.80 | 
+| epoch   3 | time: 89.03s | loss 13522.78 | test acc 50.73 | 
+| epoch   4 | time: 88.80s | loss 13111.47 | test acc 51.04 | 
