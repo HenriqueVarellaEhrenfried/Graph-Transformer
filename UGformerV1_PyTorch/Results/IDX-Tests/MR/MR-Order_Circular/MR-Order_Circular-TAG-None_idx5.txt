@@ -1,0 +1,40 @@
+Namespace(run_folder='../', dataset='MR-Order_Circular-TAG-None', learning_rate=0.0001, batch_size=4, num_epochs=30, model_name='MR-Order_Circular-TAG-None_idx5', sampled_num=512, dropout=0.5, num_hidden_layers=2, num_timesteps=1, ff_hidden_size=1024, num_neighbors=4, fold_idx=5)
+Loading data...
+loading data
+# classes: 2
+# maximum node tag: 1
+# data: 10662
+300
+Loading data... finished!
+Writing to /media/SSD/Doutorado/Doutorado/runs_UGformerV1_Sup/MR-Order_Circular-TAG-None_idx5
+
+| epoch   1 | time: 20.45s | loss 6605.68 | test acc 71.95 | 
+| epoch   2 | time: 20.47s | loss 2467.79 | test acc 72.70 | 
+| epoch   3 | time: 20.37s | loss 1789.84 | test acc 74.48 | 
+| epoch   4 | time: 19.29s | loss 1636.17 | test acc 71.48 | 
+| epoch   5 | time: 19.31s | loss 1552.08 | test acc 74.48 | 
+| epoch   6 | time: 19.31s | loss 1522.03 | test acc 77.58 | 
+| epoch   7 | time: 19.57s | loss 1491.19 | test acc 75.42 | 
+| epoch   8 | time: 19.67s | loss 1477.23 | test acc 78.24 | 
+| epoch   9 | time: 19.64s | loss 1457.18 | test acc 68.20 | 
+| epoch  10 | time: 20.14s | loss 1447.12 | test acc 76.92 | 
+| epoch  11 | time: 20.36s | loss 1421.55 | test acc 72.42 | 
+| epoch  12 | time: 20.41s | loss 1397.00 | test acc 78.24 | 
+| epoch  13 | time: 20.18s | loss 1404.10 | test acc 79.17 | 
+| epoch  14 | time: 19.56s | loss 1377.86 | test acc 79.64 | 
+| epoch  15 | time: 19.42s | loss 1369.27 | test acc 78.52 | 
+| epoch  16 | time: 20.00s | loss 1365.95 | test acc 80.21 | 
+| epoch  17 | time: 20.55s | loss 1358.58 | test acc 79.64 | 
+| epoch  18 | time: 20.53s | loss 1342.34 | test acc 81.14 | 
+| epoch  19 | time: 20.03s | loss 1341.99 | test acc 77.39 | 
+| epoch  20 | time: 19.34s | loss 1320.54 | test acc 81.14 | 
+| epoch  21 | time: 19.26s | loss 1306.52 | test acc 79.83 | 
+| epoch  22 | time: 19.27s | loss 1297.51 | test acc 79.55 | 
+| epoch  23 | time: 19.34s | loss 1296.45 | test acc 77.20 | 
+| epoch  24 | time: 19.62s | loss 1281.47 | test acc 78.89 | 
+| epoch  25 | time: 19.35s | loss 1268.33 | test acc 80.39 | 
+| epoch  26 | time: 19.32s | loss 1258.76 | test acc 77.77 | 
+| epoch  27 | time: 19.31s | loss 1259.49 | test acc 80.68 | 
+| epoch  28 | time: 19.31s | loss 1244.39 | test acc 77.39 | 
+| epoch  29 | time: 19.31s | loss 1248.59 | test acc 80.11 | 
+| epoch  30 | time: 19.29s | loss 1237.16 | test acc 81.05 | 

@@ -1,0 +1,40 @@
+Namespace(run_folder='../', dataset='B2W_COMPLETE-Rating-Default-Self-TAG-POS', learning_rate=0.0001, batch_size=4, num_epochs=30, model_name='B2W_COMPLETE-Rating-Default-Self-TAG-POS', sampled_num=512, dropout=0.5, num_hidden_layers=2, num_timesteps=1, ff_hidden_size=1024, num_neighbors=4, fold_idx=1)
+Loading data...
+loading data
+# classes: 5
+# maximum node tag: 18
+# data: 41945
+300
+Loading data... finished!
+Writing to /media/SSD/Doutorado/Doutorado/runs_UGformerV1_Sup/B2W_COMPLETE-Rating-Default-Self-TAG-POS
+
+| epoch   1 | time: 87.11s | loss 41075.59 | test acc 46.22 | 
+| epoch   2 | time: 85.87s | loss 14555.32 | test acc 47.32 | 
+| epoch   3 | time: 88.43s | loss 13494.72 | test acc 49.99 | 
+| epoch   4 | time: 84.97s | loss 13180.82 | test acc 48.51 | 
+| epoch   5 | time: 86.66s | loss 12979.19 | test acc 50.97 | 
+| epoch   6 | time: 87.91s | loss 12786.95 | test acc 50.37 | 
+| epoch   7 | time: 85.73s | loss 12554.52 | test acc 49.08 | 
+| epoch   8 | time: 86.24s | loss 12456.86 | test acc 48.89 | 
+| epoch   9 | time: 85.61s | loss 12368.79 | test acc 50.39 | 
+| epoch  10 | time: 86.65s | loss 12312.49 | test acc 51.90 | 
+| epoch  11 | time: 84.98s | loss 12204.33 | test acc 51.54 | 
+| epoch  12 | time: 85.80s | loss 12126.71 | test acc 52.80 | 
+| epoch  13 | time: 87.76s | loss 12084.12 | test acc 51.94 | 
+| epoch  14 | time: 86.54s | loss 12064.32 | test acc 52.09 | 
+| epoch  15 | time: 85.83s | loss 12020.25 | test acc 52.90 | 
+| epoch  16 | time: 87.46s | loss 11994.51 | test acc 52.32 | 
+| epoch  17 | time: 85.45s | loss 11981.47 | test acc 52.37 | 
+| epoch  18 | time: 85.64s | loss 11885.58 | test acc 52.44 | 
+| epoch  19 | time: 88.49s | loss 11908.71 | test acc 50.94 | 
+| epoch  20 | time: 86.03s | loss 11859.05 | test acc 52.32 | 
+| epoch  21 | time: 86.53s | loss 11807.54 | test acc 52.54 | 
+| epoch  22 | time: 87.70s | loss 11811.89 | test acc 52.04 | 
+| epoch  23 | time: 85.96s | loss 11757.18 | test acc 53.18 | 
+| epoch  24 | time: 86.99s | loss 11725.48 | test acc 53.61 | 
+| epoch  25 | time: 84.76s | loss 11710.63 | test acc 52.30 | 
+| epoch  26 | time: 87.17s | loss 11682.62 | test acc 52.61 | 
+| epoch  27 | time: 85.15s | loss 11672.72 | test acc 53.13 | 
+| epoch  28 | time: 86.74s | loss 11628.36 | test acc 53.06 | 
+| epoch  29 | time: 89.16s | loss 11604.52 | test acc 52.40 | 
+| epoch  30 | time: 88.63s | loss 11567.73 | test acc 52.87 | 

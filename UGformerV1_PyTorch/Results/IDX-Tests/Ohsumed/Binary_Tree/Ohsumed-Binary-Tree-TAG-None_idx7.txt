@@ -1,0 +1,40 @@
+Namespace(batch_size=4, dataset='Ohsumed-Binary-Tree-TAG-None', dropout=0.5, ff_hidden_size=1024, fold_idx=7, learning_rate=0.0001, model_name='Ohsumed-Binary-Tree-TAG-None_idx7', num_epochs=30, num_hidden_layers=2, num_neighbors=4, num_timesteps=1, run_folder='../', sampled_num=512)
+Loading data...
+loading data
+# classes: 23
+# maximum node tag: 1
+# data: 7400
+300
+Loading data... finished!
+Writing to /home/hvehrenfried/ESANN_Experiment/runs_UGformerV1_Sup/Ohsumed-Binary-Tree-TAG-None_idx7
+
+| epoch   1 | time: 78.32s | loss 119891.49 | test acc 40.14 | 
+| epoch   2 | time: 93.76s | loss 67389.01 | test acc 50.68 | 
+| epoch   3 | time: 70.50s | loss 47356.91 | test acc 50.54 | 
+| epoch   4 | time: 69.83s | loss 34553.45 | test acc 50.81 | 
+| epoch   5 | time: 70.41s | loss 24992.50 | test acc 50.41 | 
+| epoch   6 | time: 65.14s | loss 17738.66 | test acc 53.92 | 
+| epoch   7 | time: 65.41s | loss 12556.01 | test acc 50.68 | 
+| epoch   8 | time: 64.65s | loss 8624.96 | test acc 51.89 | 
+| epoch   9 | time: 66.10s | loss 6401.88 | test acc 57.57 | 
+| epoch  10 | time: 69.68s | loss 5009.39 | test acc 59.05 | 
+| epoch  11 | time: 64.83s | loss 4214.81 | test acc 59.19 | 
+| epoch  12 | time: 65.55s | loss 3729.73 | test acc 61.49 | 
+| epoch  13 | time: 64.99s | loss 3458.17 | test acc 61.76 | 
+| epoch  14 | time: 65.53s | loss 3301.87 | test acc 59.86 | 
+| epoch  15 | time: 65.20s | loss 3194.34 | test acc 60.00 | 
+| epoch  16 | time: 65.68s | loss 3115.78 | test acc 61.89 | 
+| epoch  17 | time: 65.38s | loss 3063.18 | test acc 64.19 | 
+| epoch  18 | time: 64.80s | loss 3007.50 | test acc 63.92 | 
+| epoch  19 | time: 65.00s | loss 2943.54 | test acc 64.19 | 
+| epoch  20 | time: 64.91s | loss 2908.84 | test acc 62.84 | 
+| epoch  21 | time: 65.23s | loss 2861.55 | test acc 65.14 | 
+| epoch  22 | time: 64.70s | loss 2839.11 | test acc 63.11 | 
+| epoch  23 | time: 65.18s | loss 2779.08 | test acc 63.38 | 
+| epoch  24 | time: 67.98s | loss 2798.85 | test acc 60.14 | 
+| epoch  25 | time: 70.21s | loss 2760.93 | test acc 68.11 | 
+| epoch  26 | time: 70.42s | loss 2706.32 | test acc 67.03 | 
+| epoch  27 | time: 69.70s | loss 2669.79 | test acc 66.49 | 
+| epoch  28 | time: 70.56s | loss 2652.25 | test acc 66.22 | 
+| epoch  29 | time: 70.24s | loss 2639.85 | test acc 67.30 | 
+| epoch  30 | time: 70.06s | loss 2627.55 | test acc 65.14 | 
