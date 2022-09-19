@@ -1,5 +1,17 @@
 # Experiments
 
+## Datasets
+
+The [MR](http://www.cs.cornell.edu/people/pabo/movie-review-data/) dataset is a movie review dataset for binary sentiment classification, in which each review only contains one sentence ([Pang and Lee 2005](https://doi.org/10.3115/1219840.1219855)). The corpus has 5,331 positive and 5,331 negative reviews.
+
+The [Ohsumed](http://disi.unitn.it/moschitti/corpora.htm) ([Moschitti and Basili, 2004](https://doi.org/10.1007/978-3-540-24752-4_14)) is from the MEDLINE database, a bibliographic database of crucial medical literature maintained by the National Library of Medicine. In this work, we used the 13,929 unique cardiovascular diseases abstracts in the first 20,000 abstracts of 1991. Each document in the set has one or more associated categories from the 23 disease categories. As we focus on single-label text classification, the documents belonging to multiple categories are excluded. Thus only 7,400 documents belonging to only one category remain.
+
+The [B2W-Rating-Balanced](https://github.com/HenriqueVarellaEhrenfried/B2W-Datasets) ([Ehrenfried and Todt](https://doi.org/10.1007/978-3-030-98305-5_40)) consists of 41,945 reviews divided into five classes equally. These classes are the review score given by the review's author. This score is an integer number between 1 and 5, where one is the lowest and five is the highest. Portuguese is the language of all reviews of this dataset. 
+
+The [10kGNAD](https://github.com/tblock/10kGNAD) consists of 10273 news articles from an Austrian online newspaper categorized into nine topics (Web, Panorama, International, Wirtschaft, Sport, Inland, Etat, Wissenschaft, Kultur). It is important to note that the 10kGNAD is an unbalanced dataset. The goal of this dataset is to categorize each document into one topic. All articles are in German. Table \ref{table:Datasets} presents a summary of the content of each dataset.
+
+## Results
+
 The following experiments were executed on September of 2022 using the following parameters.
 
 ```
@@ -14,7 +26,7 @@ num_timesteps=1
 sampled_num=512   
 ```
 
-We present the accuracy results in the above Tables. The values reported are the average of ten executions (we ran once per k in a 10-fold scheme). Bold values present the best result from each type of graph (Reading order, Binary tree, and Dependency tree). Italic values represent the best accuracy result of the dataset. The number after the ± sign is the standard deviation. We compare our results against the SOTA and the [BertGCN](https://aclanthology.org/2021.findings-acl.126) (Lin et al., Findings 2021), one of the best classification models that use graphs.
+We present the accuracy results in the above Tables. The values reported are the average of ten executions (we ran once per k in a 10-fold scheme). Bold values present the best result from each type of graph (Reading order, Binary tree, and Dependency tree). Italic values represent the best accuracy result of the dataset. The number after the ± sign is the standard deviation. We compare our results against the SOTA and the [BertGCN](https://github.com/ZeroRin/BertGCN) ([Lin et al., 2021](https://aclanthology.org/2021.findings-acl.126)), one of the best classification models that use graphs.
 
 | **Graph** |       **MR**       |   **Ohsumed**    | **B2W-Ratings** |   **10kGNAD**    |
 |:---------:|:------------------:|:----------------:|:---------------:|:----------------:|
