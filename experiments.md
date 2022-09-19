@@ -10,6 +10,17 @@ The [B2W-Rating-Balanced](https://github.com/HenriqueVarellaEhrenfried/B2W-Datas
 
 The [10kGNAD](https://github.com/tblock/10kGNAD) consists of 10273 news articles from an Austrian online newspaper categorized into nine topics (Web, Panorama, International, Wirtschaft, Sport, Inland, Etat, Wissenschaft, Kultur). It is important to note that the 10kGNAD is an unbalanced dataset. The goal of this dataset is to categorize each document into one topic. All articles are in German. Table \ref{table:Datasets} presents a summary of the content of each dataset.
 
+
+| **Metric**        |    **MR**    |  **Ohsumed**   | **B2W-Ratings** |   **10kGNAD**   |
+|:----------------- |:------------:|:--------------:|:---------------:|:---------------:|
+| **Language**      |   English    |    English     |   Portuguese    |     German      |
+| **Docs**          |    10,662    |     7,400      |     41,945      |     10,273      |
+| **Classes**       |      2       |       23       |        5        |        9        |
+| **Mean tokens**   | 21.04 ± 9.42 | 193.74 ± 76.36 |  26.36 ± 25.77  | 345.85 ± 257.61 |
+| **Max tokens**    |      60      |      615       |       796       |      4804       |
+| **Min tokens**    |      1       |       30       |        1        |        3        |
+| **SOTA Accuracy** |     93.3     |      60.4      |      75.8       |      90.5       | 
+
 ## Results
 
 The following experiments were executed on September of 2022 using the following parameters.
