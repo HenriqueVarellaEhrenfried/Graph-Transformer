@@ -3,6 +3,7 @@ import math
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from torchmetrics.classification import MulticlassF1Score, BinaryF1Score
 torch.manual_seed(123)
 
 import numpy as np
@@ -36,6 +37,10 @@ parser.add_argument("--num_timesteps", default=1, type=int, help="Number of self
 parser.add_argument("--ff_hidden_size", default=1024, type=int, help="The hidden size for the feedforward layer")
 parser.add_argument("--num_neighbors", default=4, type=int, help="")
 parser.add_argument('--fold_idx', type=int, default=1, help='The fold index. 0-9.')
+parser.add_argument('--use_kfold', type=str, default='True', help='Perform K-fold experiment')
+parser.add_argument('--num_test', type=int, default=1, help='Use the last N graphs as test set')
+
+
 args = parser.parse_args()
 
 print(args)
@@ -50,9 +55,15 @@ if args.dataset == 'COLLAB' or args.dataset == 'IMDBBINARY' or args.dataset == '
 graphs, num_classes = load_data(args.dataset, use_degree_as_tag)
 # graph_labels = np.array([graph.label for graph in graphs])
 # train_idx, test_idx = separate_data_idx(graphs, args.fold_idx)
-train_graphs, test_graphs = separate_data(graphs, args.fold_idx)
+if args.use_kfold == "True":
+    train_graphs, test_graphs = separate_data(graphs, args.fold_idx)
+else:
+    train_graphs, test_graphs = separate_data(graphs, args.fold_idx,0,False, args.num_test)
+
+
 feature_dim_size = graphs[0].node_features.shape[1]
 print(feature_dim_size)
+print("Training set size: %d\nTest set size: %d" % (len(train_graphs), len(test_graphs)))
 if "REDDIT" in args.dataset:
     feature_dim_size = 4
 
@@ -177,8 +188,12 @@ def evaluate():
     labels = torch.LongTensor([graph.label for graph in test_graphs]).to(device)
     correct = predictions.eq(labels.view_as(predictions)).sum().cpu().item()
     acc_test = correct / float(len(test_graphs))
-
-    return acc_test
+    if num_classes == 2:
+        metric = BinaryF1Score()
+    else:
+        metric = MulticlassF1Score(num_classes=num_classes)
+    f1 = metric(torch.flatten(predictions).cpu(), labels.cpu())
+    return (acc_test, f1)
 
 """main process"""
 import os
@@ -196,9 +211,9 @@ for epoch in range(1, args.num_epochs + 1):
     epoch_start_time = time.time()
     train_loss = train()
     cost_loss.append(train_loss)
-    acc_test = evaluate()
-    print('| epoch {:3d} | time: {:5.2f}s | loss {:5.2f} | test acc {:5.2f} | '.format(
-                epoch, (time.time() - epoch_start_time), train_loss, acc_test*100))
+    acc_test, f1 = evaluate()
+    print('| epoch {:3d} | time: {:5.2f}s | loss {:5.2f} | test acc {:5.2f} | test f1 {:5.2f} | '.format(
+                epoch, (time.time() - epoch_start_time), train_loss, acc_test*100, f1*100))
 
     if epoch > 5 and cost_loss[-1] > np.mean(cost_loss[-6:-1]):
         scheduler.step()
