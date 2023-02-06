@@ -1,0 +1,22 @@
+Namespace(run_folder='../', dataset='10kGNAD-DE-Order-Multigraph-Self-TAG-None', learning_rate=0.0001, batch_size=4, num_epochs=30, model_name='10kGNAD-DE-Order-Multigraph-Self-TAG-None_idx0', sampled_num=512, dropout=0.5, num_hidden_layers=2, num_timesteps=1, ff_hidden_size=1024, num_neighbors=4, fold_idx=0)
+Loading data...
+loading data
+# classes: 9
+# maximum node tag: 1
+# data: 10273
+300
+Loading data... finished!
+Writing to /media/SSD/Doutorado/Doutorado/runs_UGformerV1_Sup/10kGNAD-DE-Order-Multigraph-Self-TAG-None_idx0
+
+| epoch   1 | time: 119.56s | loss 185165.72 | test acc 67.80 | 
+| epoch   2 | time: 118.78s | loss 77880.10 | test acc 69.55 | 
+| epoch   3 | time: 118.32s | loss 43347.60 | test acc 69.55 | 
+| epoch   4 | time: 118.21s | loss 23817.96 | test acc 69.07 | 
+| epoch   5 | time: 118.48s | loss 12019.07 | test acc 68.48 | 
+| epoch   6 | time: 118.36s | loss 6575.21 | test acc 63.62 | 
+| epoch   7 | time: 118.42s | loss 4288.29 | test acc 71.50 | 
+| epoch   8 | time: 118.86s | loss 3733.82 | test acc 76.85 | 
+| epoch   9 | time: 119.31s | loss 3547.67 | test acc 75.39 | 
+| epoch  10 | time: 119.46s | loss 3390.18 | test acc 78.89 | 
+| epoch  11 | time: 119.47s | loss 3248.60 | test acc 79.67 | 
+| epoch  12 | time: 119.27s | loss 3186.49 | test acc 79.67 | 

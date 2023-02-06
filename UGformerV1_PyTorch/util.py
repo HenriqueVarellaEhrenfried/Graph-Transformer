@@ -136,18 +136,24 @@ def load_data(dataset, degree_as_tag):
 
     return g_list, len(label_dict)
 
-def separate_data(graph_list, fold_idx, seed=0):
-    assert 0 <= fold_idx and fold_idx < 10, "fold_idx must be from 0 to 9."
-    skf = StratifiedKFold(n_splits=10, shuffle=True, random_state=seed)
+def separate_data(graph_list, fold_idx, seed=0, use_k_fold=True, test_samples=0):
+    if use_k_fold:
 
-    labels = [graph.label for graph in graph_list]
-    idx_list = []
-    for idx in skf.split(np.zeros(len(labels)), labels):
-        idx_list.append(idx)
-    train_idx, test_idx = idx_list[fold_idx]
+        assert 0 <= fold_idx and fold_idx < 10, "fold_idx must be from 0 to 9."
+        skf = StratifiedKFold(n_splits=10, shuffle=True, random_state=seed)
 
-    train_graph_list = [graph_list[i] for i in train_idx]
-    test_graph_list = [graph_list[i] for i in test_idx]
+        labels = [graph.label for graph in graph_list]
+        idx_list = []
+        for idx in skf.split(np.zeros(len(labels)), labels):
+            idx_list.append(idx)
+        train_idx, test_idx = idx_list[fold_idx]
+
+        train_graph_list = [graph_list[i] for i in train_idx]
+        test_graph_list = [graph_list[i] for i in test_idx]
+    else:
+        total = len(graph_list)
+        train_graph_list = graph_list[0:total-test_samples]
+        test_graph_list = graph_list[total-test_samples:]
 
     return train_graph_list, test_graph_list
 
