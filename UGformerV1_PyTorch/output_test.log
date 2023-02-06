@@ -1,0 +1,42 @@
+Namespace(run_folder='../', dataset='GermEval2018-Fine-DTORMS-TAG-None', learning_rate=0.0001, batch_size=4, num_epochs=30, model_name='GermEval2018-Fine-DTORMS-TAG-None_test', sampled_num=512, dropout=0.5, num_hidden_layers=2, num_timesteps=1, ff_hidden_size=1024, num_neighbors=4, fold_idx=0, use_kfold='False', num_test=3398)
+Loading data...
+loading data
+# classes: 4
+# maximum node tag: 1
+# data: 8407
+300
+Training set size: 5009
+Test set size: 3398
+Loading data... finished!
+Writing to /media/SSD/Doutorado/Doutorado/runs_UGformerV1_Sup/GermEval2018-Fine-DTORMS-TAG-None_test
+
+| epoch   1 | time: 14.26s | loss 7523.78 | test acc 65.48 | test f1 35.06 | 
+| epoch   2 | time: 13.98s | loss 4129.05 | test acc 52.18 | test f1 26.98 | 
+| epoch   3 | time: 13.60s | loss 2833.07 | test acc 44.00 | test f1 24.50 | 
+| epoch   4 | time: 13.52s | loss 2035.16 | test acc 70.69 | test f1 31.88 | 
+| epoch   5 | time: 13.36s | loss 1686.13 | test acc 70.57 | test f1 28.89 | 
+| epoch   6 | time: 13.34s | loss 1508.80 | test acc 71.57 | test f1 39.37 | 
+| epoch   7 | time: 13.47s | loss 1413.71 | test acc 71.87 | test f1 38.01 | 
+| epoch   8 | time: 13.35s | loss 1363.47 | test acc 72.95 | test f1 35.55 | 
+| epoch   9 | time: 13.35s | loss 1310.86 | test acc 73.10 | test f1 38.52 | 
+| epoch  10 | time: 13.35s | loss 1258.70 | test acc 73.93 | test f1 42.00 | 
+| epoch  11 | time: 13.35s | loss 1254.51 | test acc 62.57 | test f1 37.15 | 
+| epoch  12 | time: 13.60s | loss 1220.46 | test acc 73.98 | test f1 41.94 | 
+| epoch  13 | time: 13.62s | loss 1190.91 | test acc 73.75 | test f1 44.22 | 
+| epoch  14 | time: 13.30s | loss 1177.72 | test acc 74.40 | test f1 43.46 | 
+| epoch  15 | time: 13.33s | loss 1173.53 | test acc 74.31 | test f1 40.68 | 
+| epoch  16 | time: 13.51s | loss 1144.50 | test acc 74.07 | test f1 42.27 | 
+| epoch  17 | time: 13.77s | loss 1129.56 | test acc 74.34 | test f1 43.57 | 
+| epoch  18 | time: 13.75s | loss 1114.73 | test acc 74.16 | test f1 43.33 | 
+| epoch  19 | time: 13.76s | loss 1103.84 | test acc 74.48 | test f1 42.25 | 
+| epoch  20 | time: 13.79s | loss 1094.57 | test acc 69.39 | test f1 46.00 | 
+| epoch  21 | time: 13.93s | loss 1093.85 | test acc 74.57 | test f1 47.18 | 
+| epoch  22 | time: 13.97s | loss 1071.09 | test acc 71.78 | test f1 46.10 | 
+| epoch  23 | time: 14.03s | loss 1049.28 | test acc 70.81 | test f1 47.48 | 
+| epoch  24 | time: 13.30s | loss 1049.03 | test acc 75.25 | test f1 46.92 | 
+| epoch  25 | time: 13.41s | loss 1024.22 | test acc 71.39 | test f1 48.63 | 
+| epoch  26 | time: 13.30s | loss 1016.58 | test acc 71.51 | test f1 46.73 | 
+| epoch  27 | time: 13.31s | loss 1006.11 | test acc 73.16 | test f1 45.86 | 
+| epoch  28 | time: 13.29s | loss 996.02 | test acc 75.34 | test f1 45.37 | 
+| epoch  29 | time: 13.20s | loss 990.29 | test acc 75.52 | test f1 50.24 | 
+| epoch  30 | time: 13.20s | loss 983.62 | test acc 71.72 | test f1 45.31 | 
