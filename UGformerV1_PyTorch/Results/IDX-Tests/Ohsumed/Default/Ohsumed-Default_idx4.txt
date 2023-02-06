@@ -1,0 +1,40 @@
+Namespace(batch_size=4, dataset='Ohsumed-Default', dropout=0.5, ff_hidden_size=1024, fold_idx=4, learning_rate=0.0001, model_name='Ohsumed-Default_idx4', num_epochs=30, num_hidden_layers=2, num_neighbors=4, num_timesteps=1, run_folder='../', sampled_num=512)
+Loading data...
+loading data
+# classes: 23
+# maximum node tag: 1
+# data: 7400
+300
+Loading data... finished!
+Writing to /home/hvehrenfried/ESANN_Experiment/runs_UGformerV1_Sup/Ohsumed-Default_idx4
+
+| epoch   1 | time: 77.76s | loss 121220.11 | test acc 41.49 | 
+| epoch   2 | time: 95.58s | loss 68716.09 | test acc 51.22 | 
+| epoch   3 | time: 70.73s | loss 48915.64 | test acc 54.59 | 
+| epoch   4 | time: 66.20s | loss 36137.73 | test acc 53.38 | 
+| epoch   5 | time: 65.67s | loss 27141.13 | test acc 57.97 | 
+| epoch   6 | time: 65.37s | loss 20033.79 | test acc 56.22 | 
+| epoch   7 | time: 65.78s | loss 15338.12 | test acc 47.03 | 
+| epoch   8 | time: 65.64s | loss 11164.88 | test acc 53.78 | 
+| epoch   9 | time: 65.98s | loss 8357.19 | test acc 53.78 | 
+| epoch  10 | time: 66.04s | loss 6379.22 | test acc 63.78 | 
+| epoch  11 | time: 65.65s | loss 5108.25 | test acc 61.89 | 
+| epoch  12 | time: 67.51s | loss 4298.14 | test acc 61.49 | 
+| epoch  13 | time: 70.36s | loss 3848.18 | test acc 62.03 | 
+| epoch  14 | time: 71.02s | loss 3565.89 | test acc 64.05 | 
+| epoch  15 | time: 70.71s | loss 3398.70 | test acc 65.14 | 
+| epoch  16 | time: 71.18s | loss 3268.14 | test acc 64.46 | 
+| epoch  17 | time: 70.87s | loss 3170.92 | test acc 62.30 | 
+| epoch  18 | time: 70.10s | loss 3097.45 | test acc 64.19 | 
+| epoch  19 | time: 70.38s | loss 3039.72 | test acc 65.68 | 
+| epoch  20 | time: 70.16s | loss 2983.24 | test acc 67.30 | 
+| epoch  21 | time: 66.77s | loss 2927.24 | test acc 67.97 | 
+| epoch  22 | time: 65.49s | loss 2874.70 | test acc 67.16 | 
+| epoch  23 | time: 66.13s | loss 2867.22 | test acc 64.05 | 
+| epoch  24 | time: 66.27s | loss 2814.54 | test acc 65.81 | 
+| epoch  25 | time: 65.28s | loss 2767.52 | test acc 71.08 | 
+| epoch  26 | time: 65.88s | loss 2734.04 | test acc 70.54 | 
+| epoch  27 | time: 65.19s | loss 2713.75 | test acc 65.54 | 
+| epoch  28 | time: 65.64s | loss 2694.86 | test acc 66.89 | 
+| epoch  29 | time: 65.18s | loss 2658.84 | test acc 64.32 | 
+| epoch  30 | time: 65.67s | loss 2613.49 | test acc 70.14 | 
