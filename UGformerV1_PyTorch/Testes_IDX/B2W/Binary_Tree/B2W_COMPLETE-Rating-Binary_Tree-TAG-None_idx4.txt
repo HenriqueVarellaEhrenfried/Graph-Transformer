@@ -1,0 +1,40 @@
+Namespace(batch_size=4, dataset='B2W_COMPLETE-Rating-Binary_Tree-TAG-None', dropout=0.5, ff_hidden_size=1024, fold_idx=4, learning_rate=0.0001, model_name='B2W_COMPLETE-Rating-Binary_Tree-TAG-None_idx4', num_epochs=30, num_hidden_layers=2, num_neighbors=4, num_timesteps=1, run_folder='../', sampled_num=512)
+Loading data...
+loading data
+# classes: 5
+# maximum node tag: 1
+# data: 41945
+300
+Loading data... finished!
+Writing to /home/hvehrenfried/ESANN_Experiment/runs_UGformerV1_Sup/B2W_COMPLETE-Rating-Binary_Tree-TAG-None_idx4
+
+| epoch   1 | time: 119.65s | loss 41529.10 | test acc 41.48 | 
+| epoch   2 | time: 121.05s | loss 14671.20 | test acc 49.44 | 
+| epoch   3 | time: 121.09s | loss 13686.48 | test acc 51.11 | 
+| epoch   4 | time: 119.71s | loss 13328.82 | test acc 47.77 | 
+| epoch   5 | time: 119.97s | loss 13054.93 | test acc 50.77 | 
+| epoch   6 | time: 121.54s | loss 12885.50 | test acc 52.18 | 
+| epoch   7 | time: 121.05s | loss 12740.24 | test acc 52.73 | 
+| epoch   8 | time: 119.65s | loss 12571.47 | test acc 53.61 | 
+| epoch   9 | time: 119.31s | loss 12445.16 | test acc 52.75 | 
+| epoch  10 | time: 120.92s | loss 12422.05 | test acc 53.28 | 
+| epoch  11 | time: 121.10s | loss 12332.41 | test acc 54.04 | 
+| epoch  12 | time: 119.90s | loss 12254.87 | test acc 53.13 | 
+| epoch  13 | time: 120.35s | loss 12205.09 | test acc 53.68 | 
+| epoch  14 | time: 121.89s | loss 12182.56 | test acc 53.59 | 
+| epoch  15 | time: 121.71s | loss 12110.58 | test acc 52.90 | 
+| epoch  16 | time: 119.68s | loss 12091.69 | test acc 52.97 | 
+| epoch  17 | time: 121.53s | loss 12054.39 | test acc 53.40 | 
+| epoch  18 | time: 120.75s | loss 11999.67 | test acc 54.30 | 
+| epoch  19 | time: 120.69s | loss 11970.11 | test acc 53.13 | 
+| epoch  20 | time: 120.57s | loss 11935.51 | test acc 53.44 | 
+| epoch  21 | time: 118.76s | loss 11932.70 | test acc 53.18 | 
+| epoch  22 | time: 120.12s | loss 11864.70 | test acc 53.64 | 
+| epoch  23 | time: 120.27s | loss 11843.54 | test acc 54.64 | 
+| epoch  24 | time: 119.24s | loss 11809.08 | test acc 54.42 | 
+| epoch  25 | time: 118.76s | loss 11778.87 | test acc 54.68 | 
+| epoch  26 | time: 117.33s | loss 11721.99 | test acc 53.73 | 
+| epoch  27 | time: 116.75s | loss 11719.54 | test acc 53.54 | 
+| epoch  28 | time: 118.84s | loss 11680.94 | test acc 53.99 | 
+| epoch  29 | time: 117.66s | loss 11660.67 | test acc 54.11 | 
+| epoch  30 | time: 117.67s | loss 11653.57 | test acc 54.09 | 
