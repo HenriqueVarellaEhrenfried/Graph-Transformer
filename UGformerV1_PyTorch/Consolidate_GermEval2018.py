@@ -80,8 +80,9 @@ def create_tuple(raw_data, mode, representation):
 def statistics(df):
     # TODO: Ceate queries to explore the data
     queries = [
-        "SELECT COUNT(Epoch) as Num_epochs, Mode, Representation, SUM(Time_in_sec) AS Total_Time FROM df GROUP BY Mode, Representation",
-        "SELECT MAX(F1_Score) FROM df WHERE Mode = 'Coarse'",
+        # Get total summary of each experiment
+         "SELECT COUNT(Epoch) as Num_epochs, Mode, Representation, SUM(Time_in_sec) AS Total_Time, MAX(Accuracy) AS Max_ACC, MAX(F1_Score) AS Max_F1 FROM df GROUP BY Mode, Representation ORDER BY Mode, Representation, Max_F1 DESC, Max_ACC DESC"     
+       
     ]
 
     for query in queries:
@@ -92,20 +93,18 @@ def main():
     data = []
     for experiment in TEST:
         content = get_content(experiment)
-        epochs = content.split("\n")[12:-1]
+        epochs = content.split("\n")[12:]
         mode = content.split("\n")[0].split(",")[1].split("-")[1]
         representation = content.split("\n")[0].split(",")[1].split("-")[2]
-        print(representation)
-    
+            
         for epoch in epochs:
             epoch_data = epoch.split("|")[1:-1]
             data.append(create_tuple(epoch_data, mode, representation))
             
     df = pd.DataFrame(data=data, columns=HEADER)
 
-    print(df.head(5))
     statistics(df)
-
+    # df.to_excel("GermEval2018.xlsx") 
 
 if __name__ == "__main__":
     main() 
