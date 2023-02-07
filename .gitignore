@@ -5,3 +5,7 @@ env-linux-server/
 UGformerV1_PyTorch/__pycache__
 UGformerV2_PyTorch/__pycache__
 .vscode
+UGformerV1_PyTorch/Excel
+UGformerV1_PyTorch/IMG
+UGformerV1_PyTorch/Logs
+.DS_Store
