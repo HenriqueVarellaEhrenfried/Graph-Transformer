@@ -3,7 +3,7 @@ import math
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torchmetrics.classification import MulticlassF1Score, BinaryF1Score
+from torchmetrics.classification import MulticlassF1Score, BinaryF1Score, BinaryPrecision, MulticlassPrecision, BinaryRecall, MulticlassRecall, BinaryAUROC, MulticlassAUROC  
 torch.manual_seed(123)
 
 import numpy as np
@@ -189,11 +189,30 @@ def evaluate():
     correct = predictions.eq(labels.view_as(predictions)).sum().cpu().item()
     acc_test = correct / float(len(test_graphs))
     if num_classes == 2:
-        metric = BinaryF1Score()
+        f1_metric = BinaryF1Score()
+        recall_metric = BinaryRecall()
+        precision_metric = BinaryPrecision()
+        auroc_metric = BinaryAUROC()
     else:
-        metric = MulticlassF1Score(num_classes=num_classes)
-    f1 = metric(torch.flatten(predictions).cpu(), labels.cpu())
-    return (acc_test, f1)
+        f1_metric = MulticlassF1Score(num_classes=num_classes)
+        recall_metric = MulticlassRecall(num_classes=num_classes)
+        precision_metric = MulticlassPrecision(num_classes=num_classes)
+        # auroc_metric = MulticlassAUROC(num_classes=num_classes) # It does not work
+
+    preds = torch.flatten(predictions).cpu()
+    targets = labels.cpu()
+    
+
+    f1 = f1_metric(preds, targets)
+    precision = precision_metric(preds, targets)
+    recall = recall_metric(preds, targets)
+
+    if num_classes == 2:
+        auroc = auroc_metric(preds, targets)
+    else:
+        auroc = -1
+    
+    return (acc_test, f1, precision, recall, auroc)
 
 """main process"""
 import os
@@ -211,9 +230,9 @@ for epoch in range(1, args.num_epochs + 1):
     epoch_start_time = time.time()
     train_loss = train()
     cost_loss.append(train_loss)
-    acc_test, f1 = evaluate()
-    print('| epoch {:3d} | time: {:5.2f}s | loss {:5.2f} | test acc {:5.2f} | test f1 {:5.2f} | '.format(
-                epoch, (time.time() - epoch_start_time), train_loss, acc_test*100, f1*100))
+    acc_test, f1, precision, recall, auroc = evaluate()
+    print('| epoch {:3d} | time: {:5.2f}s | loss {:5.2f} | test acc {:5.2f} | test f1 {:5.2f} | test precision {:5.2f} | test recall {:5.2f} | test AUROC {:5.2f} |'.format(
+                epoch, (time.time() - epoch_start_time), train_loss, acc_test*100, f1*100, precision*100, recall*100, auroc*100))
 
     if epoch > 5 and cost_loss[-1] > np.mean(cost_loss[-6:-1]):
         scheduler.step()
