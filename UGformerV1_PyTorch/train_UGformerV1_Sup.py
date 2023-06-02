@@ -168,6 +168,14 @@ def train():
 
     return total_loss
 
+def create_auroc_data(preds, num_classes):
+    final_preds = []
+    for p in preds:
+        lst = [0] * num_classes
+        lst[p] = float(1)
+        final_preds.append(lst)
+    return torch.tensor(final_preds)
+
 def evaluate():
     model.eval() # Turn on the evaluation mode
     total_loss = 0.
@@ -197,7 +205,7 @@ def evaluate():
         f1_metric = MulticlassF1Score(num_classes=num_classes)
         recall_metric = MulticlassRecall(num_classes=num_classes)
         precision_metric = MulticlassPrecision(num_classes=num_classes)
-        # auroc_metric = MulticlassAUROC(num_classes=num_classes) # It does not work
+        auroc_metric = MulticlassAUROC(num_classes=num_classes)
 
     preds = torch.flatten(predictions).cpu()
     targets = labels.cpu()
@@ -210,7 +218,7 @@ def evaluate():
     if num_classes == 2:
         auroc = auroc_metric(preds, targets)
     else:
-        auroc = -1
+        auroc = auroc_metric(create_auroc_data(preds, num_classes), targets)
     
     return (acc_test, f1, precision, recall, auroc)
 
